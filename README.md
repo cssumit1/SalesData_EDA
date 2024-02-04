@@ -42,7 +42,6 @@ SQLite3
    
 ## Install the dependencies
     pip install -r requirements.txt
-
     python main.py
 
 
@@ -64,31 +63,56 @@ The script sales_data.py extracts sales and user data, enriches it with weather 
 ## Database Schema
     - The SQLite database consists of three tables:
 
-### Users:
-    user_id (INTEGER, PRIMARY KEY)
-    name (TEXT)
-    username (TEXT)
-    email (TEXT)
-    lat (REAL)
-    lng (REAL)
+## Database Schema
 
-### Sales:
-    order_id (INTEGER, PRIMARY KEY)
-    customer_id (INTEGER, FOREIGN KEY)
-    product_id (INTEGER)
-    quantity (INTEGER)
-    price (REAL)
-    order_date (TEXT)
-    weather_info (TEXT)
+### Users
 
-### Aggregations:
-    customer_id (INTEGER, PRIMARY KEY, FOREIGN KEY)
-    total_sales_quantity (INTEGER)
-    avg_order_quantity (REAL)
+- `user_id` (INTEGER, PRIMARY KEY)
+- `name` (TEXT)
+- `username` (TEXT)
+- `email` (TEXT)
+- `lat` (REAL)
+- `lng` (REAL)
 
-### Data Analysis
-Calculate total sales per customer
-Determine the average order quantity per product
-Identify the top-selling products and customers
-Analyze monthly sales trends
-Include weather data in the analysis# SalesData_EDA
+### Sales
+
+- `order_id` (INTEGER, PRIMARY KEY)
+- `customer_id` (INTEGER, FOREIGN KEY)
+- `product_id` (INTEGER)
+- `quantity` (INTEGER)
+- `price` (REAL)
+- `order_date` (TEXT)
+- `weather_info` (TEXT)
+
+### Aggregations
+
+- `customer_id` (INTEGER, PRIMARY KEY, FOREIGN KEY)
+- `total_sales_quantity` (INTEGER)
+- `avg_order_quantity` (REAL)
+
+
+## Data Analysis
+
+The following analyses have been performed on the sales data:
+
+### Total Sales per Customer
+
+- Calculated the total sales quantity for each customer.
+
+### Average Order Quantity per Product
+
+- Determined the average order quantity for each product.
+
+### Top-Selling Products and Customers
+
+- Identified the top-selling products and customers based on total sales quantity.
+
+### Monthly Sales Trends
+
+- Analyzed trends in monthly sales quantity.
+
+### Weather Impact on Sales
+
+- Included weather data in the analysis to understand its impact on sales.
+
+
