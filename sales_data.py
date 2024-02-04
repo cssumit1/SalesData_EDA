@@ -22,7 +22,7 @@ def get_weather_info(api_key, lat, lon):
 
 # Load sales data from CSV file
 try:
-    sales_data = pd.read_csv('../sales_data_1.csv')
+    sales_data = pd.read_csv('sales_data_1.csv')
 except FileNotFoundError:
     logger.error("Error: CSV file not found.")
     exit(1)

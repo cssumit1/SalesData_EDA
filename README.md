@@ -35,30 +35,56 @@ SQLite3
 
 ### Installation
 
-1. Clone the repository: git clone https://github.com/yourusername/sales-data-pipeline.git
-2. Navigate to the project directory: cd sales-data-pipeline
+1. Clone the repository: git clone https://github.com/cssumit1/SalesData_EDA.git
+2. Navigate to the project directory: cd SalesData_EDA
 3. Install dependencies: pip install -r requirements.txt
+4. run the program >> python main.py
    
-## Install the depedecies
+## Install the dependencies
     pip install -r requirements.txt
 
-python src/main.py
+    python main.py
 
 
 ### Data Sources
-1. Sales data: CSV file (sales_data_1.csv)
+1. Sales data: CSV file (sales_data.csv)
 2. User data: JSONPlaceholder API
 4. Weather data: OpenWeatherMap API
 
 ### Project Structure
-sales_data_1.csv: CSV file containing sales data
-sales_data.py: Script for fetching weather information and building the data pipeline
-data_visualization.py: Script for visualizing insights from the data
-sales_data.db: SQLite database to store processed data
-requirements.txt: File listing required Python packages
+1. sales_data.csv: CSV file containing sales data
+2. sales_data.py: Script for fetching weather information and building the data pipeline
+3. data_visualization.py: Script for visualizing insights from the data
+4. sales_data.db: SQLite database to store processed data
+5. requirements.txt: File listing required Python packages
 
 ### Data Extraction and Transformation
 The script sales_data.py extracts sales and user data, enriches it with weather information, performs various data manipulations, and stores the results in an SQLite database.
+
+## Database Schema
+    - The SQLite database consists of three tables:
+
+### Users:
+    user_id (INTEGER, PRIMARY KEY)
+    name (TEXT)
+    username (TEXT)
+    email (TEXT)
+    lat (REAL)
+    lng (REAL)
+
+### Sales:
+    order_id (INTEGER, PRIMARY KEY)
+    customer_id (INTEGER, FOREIGN KEY)
+    product_id (INTEGER)
+    quantity (INTEGER)
+    price (REAL)
+    order_date (TEXT)
+    weather_info (TEXT)
+
+### Aggregations:
+    customer_id (INTEGER, PRIMARY KEY, FOREIGN KEY)
+    total_sales_quantity (INTEGER)
+    avg_order_quantity (REAL)
 
 ### Data Analysis
 Calculate total sales per customer
