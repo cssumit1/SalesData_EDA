@@ -91,6 +91,7 @@ The script sales_data.py extracts sales and user data, enriches it with weather 
 - `avg_order_quantity` (REAL)
 
 
+## Visualizations
 ## Data Analysis
 
 The following analyses have been performed on the sales data:
