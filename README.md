@@ -2,7 +2,6 @@
 
 ## Overview
 
-
 This project aims to build a comprehensive sales data pipeline that includes data extraction, transformation, and loading (ETL) processes. The pipeline incorporates user information, sales data, and weather information, providing insights into sales trends, customer behavior, and the impact of weather conditions on sales.
 
 ## Table of Contents
@@ -12,8 +11,6 @@ This project aims to build a comprehensive sales data pipeline that includes dat
 - [Data Pipeline Components](#data-pipeline-components)
 - [Database Schema](#database-schema)
 - [Visualizations](#visualizations)
-- [Dockerization](#dockerization)
-- [Deliverables](#deliverables)
 
 ## Project Structure
 
@@ -42,13 +39,15 @@ SQLite3
    
 ## Install the dependencies
     pip install -r requirements.txt
+    /* Need to Update correct OpenWeatherMap API Key */
+## Execution of program
     python main.py
 
-
 ### Data Sources
-1. Sales data: CSV file (sales_data.csv)
+1. Sales data: CSV file (sales_data.csv) (Sample data in sales_data_1.csv file.)
 2. User data: JSONPlaceholder API
-4. Weather data: OpenWeatherMap API
+3. Weather data: OpenWeatherMap API
+   - Need to update OpenWeatherMap API key
 
 ### Project Structure
 1. sales_data.csv: CSV file containing sales data
@@ -61,9 +60,7 @@ SQLite3
 The script sales_data.py extracts sales and user data, enriches it with weather information, performs various data manipulations, and stores the results in an SQLite database.
 
 ## Database Schema
-    - The SQLite database consists of three tables:
-
-## Database Schema
+##### The SQLite database consists of three tables:
 
 ### Users
 

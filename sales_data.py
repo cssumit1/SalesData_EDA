@@ -48,18 +48,19 @@ users_df = pd.DataFrame(users_info)
 merged_data = pd.merge(sales_data, users_df, on='customer_id', how='left')
 
 # Get OpenWeatherMap API key and store address (fictional)
-api_key = '8eff59dc714f051c65cc3ec635f94570'
-store_address = 'Fictional Store, City, Country'
+api_key = 'OpenWeatherMap_API_Key'     # Need to Update OpenWeatherMap API Key Here
 
 # Initialize a new column for weather information
 merged_data['weather_info'] = None
 
 # Make API requests to OpenWeatherMap for each sale
+total_rows = len(merged_data)
 for index, row in merged_data.iterrows():
     # Extract latitude and longitude from user data
     lat, lng = row['lat'], row['lng']
 
     # Make API request to get weather information
+    logger.info(f"Fetching weather information for row {index + 1}/{total_rows}...")
     weather_response = requests.get(
         f'https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lng}&appid={api_key}').json()
 
